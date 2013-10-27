@@ -18,12 +18,11 @@ describe Fraccion do
         	end
     	end
 	describe "Metodos que devuelven al numerador y denominador" do
-   		 it "Invocar Método para obtener el numerador" do
+   		it "Invocar Método para obtener el numerador" do
    		 	@p1.fraccion_Reducida
                     	@p1.num.should eq(1)
             	end
-           	 
-   	 	it "Invocar Método para obtener el denominador" do
+           	it "Invocar Método para obtener el denominador" do
    		 	@p1.fraccion_Reducida                   	 
    		 	@p1.den.should eq(2)
             	end
@@ -33,7 +32,6 @@ describe Fraccion do
    			(@p1==Fraccion.new(15,30)).should eq(true)    
    	 	end
     	end
-
     	describe "Calcular valor absoluto, reciproco y opuesto de una fraccion" do
    	 	it "Calcular Valor absoluto" do
    			 @p1.fraccion_Reducida   		 
@@ -42,11 +40,37 @@ describe Fraccion do
    	 	it "Calcular reciprocal" do
    			 @p1.fraccion_Reducida
    			 @p1.reciprocal.should eq(Fraccion.new(2,1))   	 
-   		 end
-   		 it "Calcular opuesto" do
+   		end
+   		it "Calcular opuesto" do
    			 @p1.fraccion_Reducida
    			 @p1.opuesto.should eq(Fraccion.new(-1,2))   	 
-   		 end
-   	 end
-
+   		end
+   	end
+	describe "Operaciones" do
+        	it "Operacion de suma" do
+            		@p1.fraccion_Reducida
+            		@p2.fraccion_Reducida    
+            		(@p1+@p2).should eq(Fraccion.new(1,1))
+        	end
+		it "Operacion de resta" do
+		    	@p1.fraccion_Reducida
+		    	@p2.fraccion_Reducida
+		    	(@p1-@p2).should eq(Fraccion.new(0,1))
+		end
+		it "Operacion de division" do
+		    	@p1.fraccion_Reducida
+		    	@p2.fraccion_Reducida
+		    	(@p1/@p2).should eq(Fraccion.new(1,1))
+		end
+		it "Operacion de multiplicacion" do
+		    	@p1.fraccion_Reducida
+		    	@p2.fraccion_Reducida
+		    	(@p1*@p2).should eq(Fraccion.new(1,4))
+		end
+		it "Operacion de obtener resto" do
+		   	@p1.fraccion_Reducida
+		    	@p2.fraccion_Reducida
+		    	(@p1%@p2).should eq(0)
+		end
+    end
 end
