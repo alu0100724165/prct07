@@ -29,4 +29,12 @@ attr_reader :numerador, :denominador
                 den=@denominador
                 den
         end
+	def to_s
+   	 	"#{@numerador}/#{@denominador}"
+    	end
+    
+   	 def to_f
+   	 	"#{Float(@numerador)/@denominador}"
+    	end
+
 end
