@@ -28,4 +28,25 @@ describe Fraccion do
    		 	@p1.den.should eq(2)
             	end
     	end
+	describe "Comparacion de dos fracciones" do
+   	 	it "Compara si dos fracciones son iguales" do
+   			(@p1==Fraccion.new(15,30)).should eq(true)    
+   	 	end
+    	end
+
+    	describe "Calcular valor absoluto, reciproco y opuesto de una fraccion" do
+   	 	it "Calcular Valor absoluto" do
+   			 @p1.fraccion_Reducida   		 
+   		 	 @p1.absoluto.should eq(Fraccion.new(1,2))
+   	 	end
+   	 	it "Calcular reciprocal" do
+   			 @p1.fraccion_Reducida
+   			 @p1.reciprocal.should eq(Fraccion.new(2,1))   	 
+   		 end
+   		 it "Calcular opuesto" do
+   			 @p1.fraccion_Reducida
+   			 @p1.opuesto.should eq(Fraccion.new(-1,2))   	 
+   		 end
+   	 end
+
 end
