@@ -17,4 +17,15 @@ describe Fraccion do
                         @p1.fraccion_Reducida.should eq(Fraccion.new(1,2))
         	end
     	end
+	describe "Metodos que devuelven al numerador y denominador" do
+   		 it "Invocar Método para obtener el numerador" do
+   		 	@p1.fraccion_Reducida
+                    	@p1.num.should eq(1)
+            	end
+           	 
+   	 	it "Invocar Método para obtener el denominador" do
+   		 	@p1.fraccion_Reducida                   	 
+   		 	@p1.den.should eq(2)
+            	end
+    	end
 end
