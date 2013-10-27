@@ -102,4 +102,38 @@ attr_reader :numerador, :denominador
         	@resto=(@numerador % @denominador)
         	@resto
     	end
+	
+	def <(obj2)
+        	
+        	if Float(@numerador)/@denominador< Float(obj2.numerador)/obj2.denominador
+           	 	return true
+        	else
+            		return false
+        	end
+    	end
+
+	def >(obj2)
+		if Float(@numerador)/@denominador> Float(obj2.numerador)/obj2.denominador
+		    return true
+		else
+		    return false
+		end
+	end
+	    
+	def <=(obj2)
+		if Float(@numerador)/@denominador<= Float(obj2.numerador)/obj2.denominador
+		    return true
+		else
+		    return false
+		end
+	    end
+	    
+	def >=(obj2)
+		
+		if Float(@numerador)/@denominador>= Float(obj2.numerador)/obj2.denominador
+		    return true
+		else
+		    return false
+		end
+	end
 end

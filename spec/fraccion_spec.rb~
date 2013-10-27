@@ -72,5 +72,27 @@ describe Fraccion do
 		    	@p2.fraccion_Reducida
 		    	(@p1%@p2).should eq(0)
 		end
-    end
+    	end
+	describe "Comparadores" do
+        	it "Se debe de poder comprobar si una fraccion es menor que otra" do
+            		@p1.fraccion_Reducida
+            		@p2.fraccion_Reducida
+            		(@p1<@p2).should eq(false)
+		end
+		it "Se debe de poder comprobar si una fraccion es mayor que otra" do
+		    	@p1.fraccion_Reducida
+		    	@p2.fraccion_Reducida
+		    	(@p1>@p2).should eq(false)
+		end
+		it "Se debe de poder comprobar si una fraccion es menor o igual que otra" do
+		    	@p1.fraccion_Reducida
+		   	@p2.fraccion_Reducida
+		    	(@p1<=@p2).should eq(true)
+		end
+		it "Se debe de poder comprobar si una fraccion es mayor o igual que otra" do
+		   	@p1.fraccion_Reducida
+		    	@p2.fraccion_Reducida
+		    	(@p1>=@p2).should eq(true)
+		end
+    	end
 end

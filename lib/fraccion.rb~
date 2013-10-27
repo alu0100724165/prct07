@@ -66,5 +66,40 @@ attr_reader :numerador, :denominador
    		 @numerador=@numerador *(-1)
    		 Fraccion.new(@numerador,@denominador)    
     	end
+	
+	def +(obj2)
+        	@den_aux=@denominador
+        	@denominador=@denominador * obj2.denominador
+        	@numerador=@numerador* obj2.denominador
+        	@numerador=@numerador + (@den_aux * obj2.numerador)
+        	fraccion_Reducida    
+    	end	
+    
+   	def -(obj2)
+        	@den_aux=@denominador
+        	@denominador=@denominador * obj2.denominador
+        	@numerador=@numerador* obj2.denominador
+        	@numerador=@numerador - (@den_aux * obj2.numerador)
+        	fraccion_Reducida
+    	end
+    
+    	def /(obj2)
+        	@numerador=@numerador*obj2.denominador        
+        	@denominador=@denominador*obj2.numerador
+        	fraccion_Reducida
+    	end
 
+    	def *(obj2)
+        	@numerador=@numerador*obj2.numerador
+        	@denominador=@denominador*obj2.denominador
+        	fraccion_Reducida
+    	end
+
+    	def %(obj2)
+        	@numerador=@numerador*obj2.denominador        
+        	@denominador=@denominador*obj2.numerador
+        	fraccion_Reducida
+        	@resto=(@numerador % @denominador)
+        	@resto
+    	end
 end
