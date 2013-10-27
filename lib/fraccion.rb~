@@ -1,5 +1,6 @@
 class Fraccion
 attr_reader :numerador, :denominador
+
 	def initialize (numerador,denominador)
                 @numerador=numerador
                 @denominador=denominador    
@@ -29,12 +30,41 @@ attr_reader :numerador, :denominador
                 den=@denominador
                 den
         end
+
 	def to_s
    	 	"#{@numerador}/#{@denominador}"
     	end
     
-   	 def to_f
+   	def to_f
    	 	"#{Float(@numerador)/@denominador}"
+    	end
+
+	def ==(obj2)
+	   	 if @numerador == obj2.numerador
+	   		 if @denominador == obj2.denominador
+	   			 return true
+	   		 end
+	   	 else
+	   		 return false
+	   	 end
+	    end
+    
+	def absoluto
+	   	 @numerador.abs
+	   	 @denominador.abs
+	   	 Fraccion.new(@numerador,@denominador)    
+	end
+
+    	def reciprocal
+   		 @aux=@numerador
+   		 @numerador=@denominador
+   		 @denominador=@aux
+   		 Fraccion.new(@numerador,@denominador)    
+    	end
+    
+    	def opuesto
+   		 @numerador=@numerador *(-1)
+   		 Fraccion.new(@numerador,@denominador)    
     	end
 
 end
