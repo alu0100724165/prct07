@@ -27,6 +27,17 @@ describe Fraccion do
    		 	@p1.den.should eq(2)
             	end
     	end
+
+	describe "Metodo para mostrar por consola" do
+		it "Mostrar la fraccion de la forma a/b" do
+			@p1.fraccion_Reducida
+			@p1.to_s.should eq("1/2")
+		end
+		it "Mostrar la fraccion de la forma flotante" do
+			@p1.to_f.should eq("0.5")
+		end
+	end
+	
 	describe "Comparacion de dos fracciones" do
    	 	it "Compara si dos fracciones son iguales" do
    			(@p1==Fraccion.new(15,30)).should eq(true)    

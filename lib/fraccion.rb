@@ -1,6 +1,8 @@
 class Fraccion
 attr_reader :numerador, :denominador
 
+	include Comparable
+
 	def initialize (numerador,denominador)
                 @numerador=numerador
                 @denominador=denominador    
@@ -38,16 +40,6 @@ attr_reader :numerador, :denominador
    	def to_f
    	 	"#{Float(@numerador)/@denominador}"
     	end
-
-	def ==(obj2)
-	   	 if @numerador == obj2.numerador
-	   		 if @denominador == obj2.denominador
-	   			 return true
-	   		 end
-	   	 else
-	   		 return false
-	   	 end
-	    end
     
 	def absoluto
 	   	 @numerador.abs
@@ -103,37 +95,15 @@ attr_reader :numerador, :denominador
         	@resto
     	end
 	
-	def <(obj2)
+	def <=>(obj2)
         	
         	if Float(@numerador)/@denominador< Float(obj2.numerador)/obj2.denominador
-           	 	return true
-        	else
-            		return false
-        	end
+           	 	return -1
+        	elsif (@numerador == obj2.numerador && @denominador == obj2.denominador)
+	   		 return 0
+            	elsif Float(@numerador)/@denominador> Float(obj2.numerador)/obj2.denominador
+			return 1
+	   	end
     	end
 
-	def >(obj2)
-		if Float(@numerador)/@denominador> Float(obj2.numerador)/obj2.denominador
-		    return true
-		else
-		    return false
-		end
-	end
-	    
-	def <=(obj2)
-		if Float(@numerador)/@denominador<= Float(obj2.numerador)/obj2.denominador
-		    return true
-		else
-		    return false
-		end
-	    end
-	    
-	def >=(obj2)
-		
-		if Float(@numerador)/@denominador>= Float(obj2.numerador)/obj2.denominador
-		    return true
-		else
-		    return false
-		end
-	end
 end
